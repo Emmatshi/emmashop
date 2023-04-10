@@ -1,7 +1,7 @@
 {
 	"name": "emmashop",
 	"version": "1.0.0",
-	"description": "Complete Node.js Guide",
+	"description": "Exchange Shop",
 	"main": "app.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
@@ -24,10 +24,8 @@
 		"express-session": "^1.15.6",
 		"express-validator": "^6.13.0",
 		"mongodb": "^4.10.0",
-		"mongoose": "^6.7.2",
-		"mysql2": "^1.6.1",
+		"mongoose": "^5.13.16",
 		"nodemailer": "^6.7.0",
-		"nodemailer-sendgrid-transport": "^0.2.0",
-		"sequelize": "^5.0.0-beta.11"
+		"nodemailer-sendgrid-transport": "^0.2.0"
 	}
 }

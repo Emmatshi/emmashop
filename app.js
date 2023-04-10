@@ -28,6 +28,16 @@ app.set('views', 'views');
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 const authRoutes = require('./routes/auth');
+// app.use(function (req, res, next) {
+// 	if (req.url === '/favicon.ico') {
+// 		res.status(204).end();
+// 	} else {
+// 		next();
+// 	}
+// });
+
+// Another option
+// app.get('/favicon.ico', (req, res) => res.status(204));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));

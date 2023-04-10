@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital@0;1&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital@0;1&display=swap');
 
 * {
 	box-sizing: border-box;
@@ -7,7 +7,7 @@
 body {
 	padding: 0;
 	margin: 0;
-	font-family: "Noto Sans Display", sans-serif;
+	font-family: 'Noto Sans Display', sans-serif;
 }
 
 main {
@@ -49,7 +49,7 @@ footer {
 .main-header__nav {
 	height: 100%;
 	width: 100%;
-	display: none;
+	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
