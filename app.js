@@ -28,16 +28,6 @@ app.set('views', 'views');
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 const authRoutes = require('./routes/auth');
-// app.use(function (req, res, next) {
-// 	if (req.url === '/favicon.ico') {
-// 		res.status(204).end();
-// 	} else {
-// 		next();
-// 	}
-// });
-
-// Another option
-// app.get('/favicon.ico', (req, res) => res.status(204));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -58,12 +48,17 @@ app.use((req, res, next) => {
 	}
 	User.findById(req.session.user._id)
 		.then((user) => {
+			if (!user) {
+				return next();
+			}
 			req.user = user;
 			next();
 		})
-		.catch((err) => console.log(err));
+		.catch((err) => {
+			throw new Error(err);
+		});
 });
-//
+
 app.use((req, res, next) => {
 	res.locals.isAuthenticated = req.session.isLoggedIn;
 	res.locals.csrfToken = req.csrfToken();
@@ -73,6 +68,8 @@ app.use((req, res, next) => {
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 app.use(authRoutes);
+
+app.use('/500', errorController.get500);
 
 app.use(errorController.get404);
 
