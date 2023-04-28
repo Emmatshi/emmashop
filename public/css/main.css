@@ -275,7 +275,8 @@ footer {
 }
 
 .pagination a:hover,
-.pagination a:active {
+.pagination a:active,
+.pagination a.active {
 	background: #7e887e;
 	color: white;
 }
