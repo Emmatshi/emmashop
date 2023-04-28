@@ -172,12 +172,13 @@ exports.getProducts = (req, res, next) => {
 
 exports.postDeleteProduct = (req, res, next) => {
 	const prodId = req.body.productId;
-	Product.findById()
+	Product.findById(prodId)
 		.then((product) => {
 			if (!product) {
-				fileHelper.deleteFile(product.imageUrl);
 				return next(new Error('Product not found.'));
 			}
+			fileHelper.deleteFile(product.imageUrl);
+			return Product.deleteOne({ _id: prodId, userId: req.user.id });
 		})
 		.then(() => {
 			console.log('DESTROYED PRODUCT');
