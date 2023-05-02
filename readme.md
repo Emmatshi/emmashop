@@ -6,14 +6,19 @@ This is a fullstack application applied to a device recycling project allowing t
 
 ## Techonology
 
-### Backend:
+### Backend
 
-Expressjs
+#### Nodejs:
+
+A JavaScript runtime environment that runs on server-side
+
+#### Expressjs:
+
+A framework that use nodejs not only to build web application, but also providing middleware, routing, parsing functionalities. Furthermore, Expressjs facitate the use of templating engine EJS and plays a big role on displaying data along with the database integration layer to connect with the database.
 
 ### Database:
 
-MongoDB
-Mongoose
+MongoDB a NoSQL database that stores data using Mongoose as ODM to access data and provides validation and business logic in the process
 
 ## Features
 
